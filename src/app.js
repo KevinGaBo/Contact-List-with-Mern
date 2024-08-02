@@ -7,4 +7,15 @@ const app = express();
 
 app.set('port', process.env.PORT || 4000)
 
+//middlewares
+
+app.use(cors())
+app.use(express.json())
+
+// Rutas
+
+app.get('/', (req, res) => {
+    res.send('Bienvenido a mi API rest full')
+})
+
 module.exports = app
